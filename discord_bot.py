@@ -1,6 +1,9 @@
 import discord
 
-client = discord.Client()
+intents = discord.Intents.default()
+intents.message_content = True
+
+client = discord.Client(intents=intents)
 
 @client.event
 async def on_ready():
@@ -12,6 +15,6 @@ async def on_message(message):
         return
 
     if message.content.startswith('!hello'):
-        await message.channel.send('Hello!')
+        await message.channel.send(f'{message.author.id}, {message.channel}, {message.content}')
 
 client.run('YOUR_BOT_TOKEN')
