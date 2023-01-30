@@ -29,7 +29,6 @@ class Testing(Cog):
         if profile is not None:
             await context.message.reply(embed=profile)
         else:
-            print('wtf3')
             await context.message.reply('You must register first!')
 
     @tasks.loop(minutes= 1.0)

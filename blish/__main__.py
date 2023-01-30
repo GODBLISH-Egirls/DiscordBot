@@ -4,6 +4,7 @@ from blish import bot
 from modules.sample.sample import Testing
 from modules.openai.open_ai_test import OpenAi
 from constants import BotConfig
+from time import sleep
 
 async def main() -> None:
     await bot.add_cog(Testing(bot))
@@ -17,3 +18,7 @@ if __name__=='__main__':
         print("ayaya something happened :<")
         print(str(e))
         exit(69)
+    except KeyboardInterrupt:
+        print("See you next time!")
+        sleep(1)
+        exit(0)
