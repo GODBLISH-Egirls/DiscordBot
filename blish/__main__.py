@@ -1,7 +1,7 @@
 import asyncio
 
 from blish import bot
-from modules.test import Testing
+from modules.sample.sample import Testing
 from modules.open_ai_test import OpenAi
 from constants import BotConfig
 
