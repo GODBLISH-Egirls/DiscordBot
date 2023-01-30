@@ -7,6 +7,8 @@ Ryan Perry - [Github: RPerry57](https://github.com/RPerry57) & Discord: Perry#00
 
 Matthew Li - [Github: officialmattli](https://github.com/officialmattli) & Discord: bigmatt#5217
 
+Andy Huang - [Github: Andy051](https://github.com/Andy051) & Discord: Azurnity#3835
+
 ## Installation
 ```
 # install the requirements
