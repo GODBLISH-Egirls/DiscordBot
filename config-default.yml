@@ -6,3 +6,13 @@ bot:
     sentry_dsn:     !ENV "DISCORD_SENTRY_DSN"
     token:          !ENV "DISCORD_TOKEN"
     trace_loggers:  !ENV "DISCORD_TRACE_LOGGERS"
+
+style:
+    colors:
+        aqua:     0x00ffff
+        black:    0x000000
+        blue:     0x0000ff
+        green:    0x008000
+        tomato:   0xff6347
+        white:    0xffffff
+        yellow:   0xffff00

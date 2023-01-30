@@ -8,6 +8,10 @@ import os
 from typing import Optional
 import yaml
 
+MAIN_DIR = os.path.dirname(__file__)
+PROJECT_ROOT = os.path.abspath(os.path.join(MAIN_DIR, os.pardir))
+YAML_FILE_PATH = os.path.join(PROJECT_ROOT, 'config-default.yml')
+
 try:
     dotenv.load_dotenv()
 except ModuleNotFoundError:
@@ -48,7 +52,7 @@ def _env_var_constructor(loader, node):
 
 yaml.SafeLoader.add_constructor("!ENV", _env_var_constructor)
 
-with open('config-default.yml', encoding='UTF-8') as config_file:
+with open(YAML_FILE_PATH, encoding='UTF-8') as config_file:
     CONFIG_YAML = yaml.safe_load(config_file)
 
 class YAMLInitializer(type):
@@ -77,6 +81,9 @@ class YAMLInitializer(type):
         for name in cls.__annotations__:
             yield name, getattr(cls, name)
 
+'''
+Loads config values needed to initialize Bot
+'''
 class BotConfig(metaclass=YAMLInitializer):
     section = 'bot'
 
@@ -85,5 +92,17 @@ class BotConfig(metaclass=YAMLInitializer):
     token: str
     trace_loggers: Optional[str]
 
-MAIN_DIR = os.path.dirname(__file__)
-PROJECT_ROOT = os.path.abspath(os.path.join(MAIN_DIR, os.pardir))
+'''
+Loads config values of colors for use
+'''
+class ColorConfig(metaclass=YAMLInitializer):
+    section = "style"
+    subsection = "colors"
+
+    aqua: int
+    black: int
+    blue: int
+    green: int
+    tomato: int
+    white: int
+    yellow: int
