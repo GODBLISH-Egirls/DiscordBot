@@ -16,3 +16,8 @@ Devin Huang - [Github: huandevi](https://github.com/huandevi) & Discord: crown j
 # install the requirements
 $ python3 -m pip install -r requirements.txt
 ```
+
+## How to run the App
+```
+python3 run.py
+```
