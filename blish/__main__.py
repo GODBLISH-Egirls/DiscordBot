@@ -2,7 +2,7 @@ import asyncio
 
 from blish import bot
 from modules.sample.sample import Testing
-from modules.open_ai_test import OpenAi
+from modules.openai.open_ai_test import OpenAi
 from constants import BotConfig
 
 async def main() -> None:

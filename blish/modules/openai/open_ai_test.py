@@ -83,7 +83,8 @@ class OpenAi(Cog):
 
 
 if __name__=="__main__":
-    print(API_KEY)
-    open_ai = OpenAi(API_KEY)
+    from blish import bot
+    
+    open_ai = OpenAi(bot, api_key=API_KEY)
     text_response = open_ai.text_generation(prompt="Tell me about League of Legends")
     print(text_response)
