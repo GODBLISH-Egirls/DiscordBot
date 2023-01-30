@@ -12,3 +12,8 @@ Matthew Li - [Github: officialmattli](https://github.com/officialmattli) & Disco
 # install the requirements
 $ python3 -m pip install -r requirements.txt
 ```
+
+## How to run the App
+```
+python3 run.py
+```
