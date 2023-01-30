@@ -1,3 +1,4 @@
 .env
 token.rc
 __pycache__/
+.venv/

@@ -3,9 +3,10 @@ Loads bot configuration from YAML files.
 By default, this simply loads the default
 configuration located at `config-default.yml`.
 '''
-import dotenv
 import os
 from typing import Optional
+
+import dotenv
 import yaml
 
 MAIN_DIR = os.path.dirname(__file__)

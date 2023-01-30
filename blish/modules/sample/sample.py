@@ -1,10 +1,13 @@
-from discord.ext.commands import Bot, Cog, command, Context
+from discord import Member
 from discord.ext import tasks
-from discord import Embed, Member
-from modules.sample.player import Player
-from constants import ColorConfig
+from discord.ext.commands import Bot, Cog, Context, command
+
+from blish.modules.sample.player import Player
+
 
 class Testing(Cog):
+    """Testing sample class of how to implement discord commands."""
+
     def __init__(self, bot: Bot, *args, **kwargs):
         super(*args, **kwargs)
         self.bot = bot
@@ -13,7 +16,7 @@ class Testing(Cog):
     @command()
     # !test
     async def test(self, context: Context, member: Member = None) -> None:
-        '''test function'''
+        """Test function."""
         await context.send(
             f'''\
                 Author: {context.author}
@@ -31,7 +34,7 @@ class Testing(Cog):
         else:
             await context.message.reply('You must register first!')
 
-    @tasks.loop(minutes= 1.0)
+    @tasks.loop(minutes=1.0)
     async def runtime(self):
         self.runtime += 1
         print(f'The program has been running for {self.runtime} minute(s)!')

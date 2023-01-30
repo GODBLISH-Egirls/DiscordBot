@@ -1,0 +1,55 @@
+[tool.poetry]
+name = "discordbot"
+version = "0.1.0"
+description = "Private bot named blish. Still under development"
+authors = ["hyunwoo312 <hyunwoojames@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "3.9.*"
+
+aiohttp = "3.8.3"
+discord = "2.1.0"
+"discord.py" = "2.1.0"
+pyyaml = "6.0"
+openai = "^0.26.4"
+
+[tool.poetry.dev-dependencies]
+coverage = "6.5.0"
+flake8 = "6.0.0"
+flake8-annotations = "2.9.1"
+flake8-bugbear = "22.10.27"
+flake8-docstrings = "1.6.0"
+flake8-string-format = "0.3.0"
+flake8-tidy-imports = "4.8.0"
+flake8-todo = "0.7"
+flake8-isort = "5.0.3"
+pre-commit = "3.0.2"
+pip-licenses = "4.0.1"
+pytest = "7.2.0"
+pytest-cov = "4.0.0"
+python-dotenv = "0.21.1"
+taskipy = "1.10.3"
+
+[tool.poetry.group.dev.dependencies]
+taskipy = "^1.10.3"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.taskipy.tasks]
+start = "python3 -m blish"
+isort = "isort ."
+lint = "pre-commit run --all-files"
+precommit = "pre-commit install"
+
+# TODO: Set up for the commands below
+build = "docker build -t ghcr.io/python-discord/bot:latest -f Dockerfile ."
+push = "docker push ghcr.io/python-discord/bot:latest"
+test-nocov = "pytest -n auto"
+test = "pytest -n auto --cov-report= --cov --ff"
+retest = "pytest -n auto --cov-report= --cov --lf"
+html = "coverage html"
+report = "coverage report"

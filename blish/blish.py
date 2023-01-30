@@ -1,6 +1,7 @@
-from discord.ext import commands
 from discord import Intents
-from constants import BotConfig
+from discord.ext import commands
+
+from blish.constants import BotConfig
 
 intents = Intents.default()
 intents.message_content = True
@@ -17,13 +18,16 @@ bot = commands.Bot(
         intents=intents
 )
 
+
 @bot.event
 async def on_connect():
     print('the client successfully established connection with the Discord server')
 
+
 @bot.event
 async def on_disconnect():
     print('the client connection has been lost')
+
 
 @bot.event
 async def on_ready():

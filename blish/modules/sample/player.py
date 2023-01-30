@@ -1,19 +1,21 @@
-from discord import Client, Embed, Member, User
-from typing import Union, Optional
+from typing import Optional, Union
 
-from constants import ColorConfig
+from discord import Embed, Member, User
+
+from blish.constants import ColorConfig
+
 
 class Player:
-    '''TODO: Type out better descriptions'''
+    """TODO: Type out better descriptions."""
 
     def __init__(self, user: Union[Member, User]):
-        '''Discord user ID'''
+        """Discord user ID."""
         self.id = user.id
 
-        '''Discord user name'''
+        """Discord user name."""
         self.name = user.name
 
-        '''Registered status'''
+        """Registered status."""
         self.registered = True
 
     def getProfile(self) -> Optional[Embed]:
@@ -24,8 +26,7 @@ class Player:
             color=ColorConfig.aqua,
             description='Sample body text'
         )
-        embed.add_field(name = "Command List", value = "Here are all commands", inline = False)
-        embed.add_field(name = "!test", value = "testing function\n for testing", inline = True)
-        embed.add_field(name = "!sample", value = "sample embed command\n this command", inline = True)
+        embed.add_field(name="Command List", value="Here are all commands", inline=False)
+        embed.add_field(name="!test", value="testing function\n for testing", inline=True)
+        embed.add_field(name="!sample", value="sample embed command\n this command", inline=True)
         return embed
-    
