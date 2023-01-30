@@ -1,8 +1,8 @@
 import asyncio
 
-from blish.blish import bot
-from blish.modules.test import Testing
-from blish.constants import BotConfig
+from blish import bot
+from modules.test import Testing
+from constants import BotConfig
 
 async def main() -> None:
     await bot.add_cog(Testing(bot))

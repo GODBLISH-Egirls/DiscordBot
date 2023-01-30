@@ -1,0 +1,8 @@
+debug:     !ENV ["BOT_DEBUG", "true"]
+file_logs: !ENV ["FILE_LOGS", "false"]
+
+bot:
+    prefix:         "!"
+    sentry_dsn:     !ENV "DISCORD_SENTRY_DSN"
+    token:          !ENV "DISCORD_TOKEN"
+    trace_loggers:  !ENV "DISCORD_TRACE_LOGGERS"

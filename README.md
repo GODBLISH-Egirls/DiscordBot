@@ -19,5 +19,5 @@ $ python3 -m pip install -r requirements.txt
 
 ## How to run the App
 ```
-python3 run.py
+python3 blish
 ```
