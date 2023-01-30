@@ -9,8 +9,15 @@ Matthew Li - [Github: officialmattli](https://github.com/officialmattli) & Disco
 
 Andy Huang - [Github: Andy051](https://github.com/Andy051) & Discord: Azurnity#3835
 
+Devin Huang - [Github: huandevi](https://github.com/huandevi) & Discord: crown jewel#9588
+
 ## Installation
 ```
 # install the requirements
 $ python3 -m pip install -r requirements.txt
+```
+
+## How to run the App
+```
+python3 blish
 ```
