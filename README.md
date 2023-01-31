@@ -43,7 +43,7 @@ $ python3 -m venv .venv
 # initialize your virtual environment (Unix/Linux)
 $ source .venv/bin/activate
 # initialize your virtual environment (Windows)
-$ .\env\Scripts\activate
+$ python -m venv .\env\Scripts\activate
 ```
 
 6. Install dependencies
@@ -61,7 +61,7 @@ $ poetry install
 # initialize your virtual environment (Unix/Linux)
 $ source .venv/bin/activate
 # initialize your virtual environment (Windows)
-$ .\env\Scripts\activate
+$ python -m venv .\env\Scripts\activate
 ```
 
 2. Install dependencies (skip if you already did)
@@ -72,6 +72,7 @@ $ poetry install
 ```
 
 3. Start the bot!
+Note: You need to have the ENV file, which has the Discord Auth Token to start. Ask Hyun for File
 
 ```
 # start up the bot
