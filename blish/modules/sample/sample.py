@@ -1,13 +1,14 @@
 from discord.ext import tasks
-from discord.ext.commands import Bot, Cog, Context, command
+from discord.ext.commands import Cog, Context, command
 
+from blish.blish import Blish
 from blish.modules.sample.player import Player
 
 
 class Testing(Cog):
     """Testing sample class of how to implement discord commands."""
 
-    def __init__(self, bot: Bot, *args, **kwargs):
+    def __init__(self, bot: Blish, *args, **kwargs):
         super(*args, **kwargs)
         self.bot = bot
         self.runtime = 0
@@ -39,6 +40,6 @@ Command: {context.command}\
         print(f'The program has been running for {self.runtime} minute(s)!')
 
 
-async def setup(bot: Bot) -> None:
+async def setup(bot: Blish) -> None:
     """Load the Testing cog."""
     await bot.add_cog(Testing(bot))

@@ -1,24 +1,48 @@
 import asyncio
 from time import sleep
 
-from blish.blish import bot
+from discord import Intents
+
+import blish
+from blish.blish import Blish
 from blish.constants import BotConfig
-from blish.error_handler import ErrorHandler
-from blish.interceptors.message_validation_interceptor import \
-    MessageValidationInterceptor
-from blish.modules.openai.open_ai_test import OpenAi
-from blish.modules.sample.sample import Testing
+
+intents = Intents.default()
+intents.message_content = True
+intents.presences = False
+intents.dm_typing = False
+intents.dm_reactions = False
+intents.invites = False
+intents.webhooks = False
+intents.integrations = False
+
+blish.instance = Blish(
+        command_prefix=BotConfig.prefix,
+        case_insensitive='True',
+        intents=intents
+)
+
+
+@blish.instance.event
+async def on_connect():
+    print(f'Cogs: {list(blish.instance.cogs.keys())}')
+    print('the client successfully established connection with the Discord server')
+
+
+@blish.instance.event
+async def on_disconnect():
+    print('the client connection has been lost')
+
+
+@blish.instance.event
+async def on_ready():
+    print('the bot is ready to go!')
 
 
 async def main() -> None:
-    # TODO: Move all Cog loading/unloading to its own extensions class
-    await bot.add_cog(Testing(bot))
-    await bot.add_cog(OpenAi(bot))
+    async with blish.instance as server:
+        await server.start(BotConfig.token)
 
-    await bot.add_cog(ErrorHandler(bot))
-    await bot.add_cog(MessageValidationInterceptor(bot))
-
-    await bot.start(BotConfig.token)
 
 if __name__ == '__main__':
     try:
