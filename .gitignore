@@ -2,3 +2,9 @@
 token.rc
 __pycache__/
 .venv/
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*

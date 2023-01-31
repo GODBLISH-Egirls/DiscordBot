@@ -1,10 +1,12 @@
-from discord.ext.commands import Bot, Cog, Context, NoPrivateMessage
+from discord.ext.commands import Cog, Context, NoPrivateMessage
+
+from blish.blish import Blish
 
 
 class MessageValidationInterceptor(Cog):
     """A global interceptor that checks and validates messages."""
 
-    def __init__(self, bot: Bot):
+    def __init__(self, bot: Blish):
         self.bot = bot
         self.bot.check(self.check_if_bot)
         self.bot.check(self.check_if_guild)
@@ -20,6 +22,6 @@ class MessageValidationInterceptor(Cog):
         return True
 
 
-async def setup(bot: Bot) -> None:
-    """Load the Testing cog."""
+async def setup(bot: Blish) -> None:
+    """Load the MessageValidationInterceptor cog."""
     await bot.add_cog(MessageValidationInterceptor(bot))

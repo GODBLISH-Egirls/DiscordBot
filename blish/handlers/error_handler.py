@@ -1,10 +1,12 @@
-from discord.ext.commands import Bot, Cog, Context, errors
+from discord.ext.commands import Cog, Context, errors
+
+from blish.blish import Blish
 
 
 class ErrorHandler(Cog):
     """Handles errors emitted from commands."""
 
-    def __init__(self, bot: Bot):
+    def __init__(self, bot: Blish):
         self.bot = bot
 
     @Cog.listener()
@@ -18,6 +20,6 @@ class ErrorHandler(Cog):
             await context.send(e)
 
 
-async def setup(bot: Bot) -> None:
-    """Load the Testing cog."""
+async def setup(bot: Blish) -> None:
+    """Load the ErrorHandler cog."""
     await bot.add_cog(ErrorHandler(bot))

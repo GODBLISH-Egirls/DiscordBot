@@ -2,8 +2,10 @@ import os
 from typing import Union
 
 import openai
-from discord.ext.commands import Bot, Cog, Context, command
+from discord.ext.commands import Cog, Context, command
 from dotenv import load_dotenv
+
+from blish.blish import Blish
 
 load_dotenv()
 API_KEY = os.getenv("OPENAI_API_KEY")
@@ -29,7 +31,7 @@ class OpenAi(Cog):
     # A language model that has a smaller capacity than Davinci also much cheaper, but is still capable of generating high-quality text. ($0.0005  / 1K tokens)
     BABBAGE_MODEL_ENGINE = "text-babbage-001"
 
-    def __init__(self, bot: Bot, api_key: Union[str, None] = API_KEY, *args, **kwargs):
+    def __init__(self, bot: Blish, api_key: Union[str, None] = API_KEY, *args, **kwargs):
         super(*args, **kwargs)
         self.bot = bot
         openai.api_key = api_key
@@ -85,13 +87,6 @@ class OpenAi(Cog):
         return ""
 
 
-async def setup(bot: Bot) -> None:
+async def setup(bot: Blish) -> None:
     """Load the OpenAi cog."""
     await bot.add_cog(OpenAi(bot))
-
-if __name__ == "__main__":
-    from blish import bot
-
-    open_ai = OpenAi(bot, api_key=API_KEY)
-    text_response = open_ai.text_generation(prompt="Tell me about League of Legends")
-    print(text_response)
