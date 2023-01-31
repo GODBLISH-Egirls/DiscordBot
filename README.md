@@ -73,7 +73,7 @@ $ poetry install
 
 3. Start the bot!
 
-** Note: You need to have the ENV file, which has the Discord Auth Token to start. Ask Hyun for File**
+** Note: You need to have the ENV file, which has the Discord Auth Token to start. Ask Hyun for File **
 
 ```
 # start up the bot
