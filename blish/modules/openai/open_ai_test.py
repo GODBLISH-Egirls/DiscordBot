@@ -85,6 +85,10 @@ class OpenAi(Cog):
         return ""
 
 
+async def setup(bot: Bot) -> None:
+    """Load the OpenAi cog."""
+    await bot.add_cog(OpenAi(bot))
+
 if __name__ == "__main__":
     from blish import bot
 

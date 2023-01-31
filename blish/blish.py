@@ -22,6 +22,7 @@ bot = commands.Bot(
 @bot.event
 async def on_connect():
     print('the client successfully established connection with the Discord server')
+    print(f'Cogs: {list(bot.cogs.keys())}')
 
 
 @bot.event

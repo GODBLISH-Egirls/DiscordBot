@@ -1,4 +1,3 @@
-from discord import Member
 from discord.ext import tasks
 from discord.ext.commands import Bot, Cog, Context, command
 
@@ -15,13 +14,13 @@ class Testing(Cog):
 
     @command()
     # !test
-    async def test(self, context: Context, member: Member = None) -> None:
+    async def test(self, context: Context) -> None:
         """Test function."""
         await context.send(
             f'''\
-                Author: {context.author}
-                Channel: #{context.channel.name}
-                Command: {context.command}\
+Author: {context.author}
+Channel: #{context.channel.name}
+Command: {context.command}\
             ''')
 
     @command(alias=('sample1',))
@@ -38,3 +37,8 @@ class Testing(Cog):
     async def runtime(self):
         self.runtime += 1
         print(f'The program has been running for {self.runtime} minute(s)!')
+
+
+async def setup(bot: Bot) -> None:
+    """Load the Testing cog."""
+    await bot.add_cog(Testing(bot))
