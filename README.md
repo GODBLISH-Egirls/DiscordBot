@@ -18,7 +18,8 @@ Devin Huang - [Github: huandevi](https://github.com/huandevi) & Discord: crown j
 
 ```
 # install poetry and venv in your system
-$ python3 -m pip install poetry, virtualenv
+$ python3 -m pip install poetry==1.3.2
+$ python3 -m pip install virtualenv
 ```
 
 2. Clone this repository into your desired workspace
@@ -73,7 +74,7 @@ $ poetry install
 
 3. Start the bot!
 
-** Note: You need to have the ENV file, which has the Discord Auth Token to start. Ask Hyun for File **
+**Note: You need to have the ENV file, which has the Discord Auth Token to start. Ask Hyun for File**
 
 ```
 # start up the bot
