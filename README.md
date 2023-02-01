@@ -1,7 +1,9 @@
 # DiscordBot
+
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)](https://github.com/pre-commit/pre-commit)
 
 ## Contributors
+
 Hyunwoo Kim - [Github: hyunwoo312](https://github.com/hyunwoo312) & Discord: hy#1999
 
 Ryan Perry - [Github: RPerry57](https://github.com/RPerry57) & Discord: Perry#0057
@@ -11,6 +13,8 @@ Matthew Li - [Github: officialmattli](https://github.com/officialmattli) & Disco
 Andy Huang - [Github: Andy051](https://github.com/Andy051) & Discord: Azurnity#3835
 
 Devin Huang - [Github: huandevi](https://github.com/huandevi) & Discord: crown jewel#9588
+
+Tom Chen - [Github: TomChen7](https://github.com/TomChen7) & Discord: AiRz#9535
 
 ## Set up this repository
 
@@ -54,8 +58,8 @@ $ python -m venv .\env\Scripts\activate
 $ poetry install
 ```
 
-
 ## How to run the App
+
 1. Initialize your virtual environment that you set up
 
 ```
@@ -83,14 +87,16 @@ $ poetry run task start
 
 ## Contributing
 
-* ### Always make sure to have your virtual environment active when making/testing changes to ensure our bot is running with only the expected environment settings.
+- ### Always make sure to have your virtual environment active when making/testing changes to ensure our bot is running with only the expected environment settings.
 
-* ### Always make sure to commit your changes to a SEPARATE remote branch (e.g. NO direct commits to `mainline` is allowed)
-Refer to this article on creating your own local & remote branch for changes you wish to make
-https://stackoverflow.com/questions/1519006/how-do-i-create-a-remote-git-branch
+- ### Always make sure to commit your changes to a SEPARATE remote branch (e.g. NO direct commits to `mainline` is allowed)
 
-* ### Always make sure that your commits pass all the lint tests (the linting tests will automatically run when you commit)
-You can manually run the linting tests by executing the following
+  Refer to this article on creating your own local & remote branch for changes you wish to make
+  https://stackoverflow.com/questions/1519006/how-do-i-create-a-remote-git-branch
+
+- ### Always make sure that your commits pass all the lint tests (the linting tests will automatically run when you commit)
+  You can manually run the linting tests by executing the following
+
 ```
 $ poetry run task lint
 ```
