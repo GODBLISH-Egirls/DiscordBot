@@ -43,6 +43,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.taskipy.tasks]
 start = "python3 -m blish"
+start_win = "python -m blish"
 isort = "isort ."
 lint = "pre-commit run --all-files"
 precommit = "pre-commit install"
