@@ -2,6 +2,7 @@
 token.rc
 __pycache__/
 .venv/
+.idea
 
 # Unit test / coverage reports
 htmlcov/
