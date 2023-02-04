@@ -1,4 +1,3 @@
-from discord.ext import tasks
 from discord.ext.commands import Cog, Context, command
 
 from blish.blish import Blish
@@ -34,10 +33,32 @@ Command: {context.command}\
         else:
             await context.message.reply('You must register first!')
 
-    @tasks.loop(minutes=1.0)
-    async def runtime(self):
-        self.runtime += 1
-        print(f'The program has been running for {self.runtime} minute(s)!')
+    @command()
+    # !colored_text_sample
+    # https://gist.github.com/kkrypt0nn/a02506f3712ff2d1c8ca7c9e0aed7c06#file-ansi-colors-showcase-md
+    async def colored_text(self, context: Context) -> None:
+        await context.send('''
+```ansi
+Text coloring example!
+
+\u001b[0;30mGray\u001b[0;0m
+\u001b[0;31mRed\u001b[0;0m
+\u001b[0;32mGreen\u001b[0;0m
+\u001b[0;33mYellow\u001b[0;0m
+\u001b[0;34mBlue\u001b[0;0m
+\u001b[0;35mPink\u001b[0;0m
+\u001b[0;36mCyan\u001b[0;0m
+\u001b[0;37mWhite\u001b[0;0m
+\u001b[0;40mFirefly dark blue background\u001b[0;0m
+\u001b[0;41mOrange background\u001b[0;0m
+\u001b[0;42mMarble blue background\u001b[0;0m
+\u001b[0;43mGreyish turquoise background\u001b[0;0m
+\u001b[0;44mGray background\u001b[0;0m
+\u001b[0;45mIndigo background\u001b[0;0m
+\u001b[0;46mLight gray background\u001b[0;0m
+\u001b[0;47mWhite background\u001b[0;0m
+```
+        ''')
 
 
 async def setup(bot: Blish) -> None:
