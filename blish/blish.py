@@ -27,18 +27,18 @@ loaded: {list(cogs)}"
         await super().setup_hook()
 
         # Load all the handler Cogs
-        self.all_handlers = await self._load_extensions(handlers)
+        self.all_handlers = self._load_extensions(handlers)
         print(Blish.COGS_SUCCESSFULLY_LOADED_MESSAGE("Handler", self.all_handlers))
 
         # Load all the interceptor Cogs
-        self.all_interceptors = await self._load_extensions(interceptors)
+        self.all_interceptors = self._load_extensions(interceptors)
         print(Blish.COGS_SUCCESSFULLY_LOADED_MESSAGE("Interceptors", self.all_interceptors))
 
         # Load all the module Cogs
-        self.all_modules = await self._load_extensions(modules)
+        self.all_modules = self._load_extensions(modules)
         print(Blish.COGS_SUCCESSFULLY_LOADED_MESSAGE("Modules", self.all_modules))
 
-    async def _load_extensions(self, module: ModuleType) -> frozenset[str]:
+    def _load_extensions(self, module: ModuleType) -> frozenset[str]:
         """Extensions loader by creating an :obj:`asyncio.Task` for each load event."""
         background_tasks = set()
         extensions = get_module_names(module)
