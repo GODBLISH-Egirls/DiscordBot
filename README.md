@@ -48,7 +48,8 @@ $ python3 -m venv .venv
 # initialize your virtual environment (Unix/Linux)
 $ source .venv/bin/activate
 # initialize your virtual environment (Windows)
-$ python -m venv .\env\Scripts\activate
+$  Set-ExecutionPolicy Unrestricted -Scope Process
+$ .\env\Scripts\activate
 ```
 
 6. Install dependencies
@@ -66,7 +67,8 @@ $ poetry install
 # initialize your virtual environment (Unix/Linux)
 $ source .venv/bin/activate
 # initialize your virtual environment (Windows)
-$ python -m venv .\env\Scripts\activate
+$  Set-ExecutionPolicy Unrestricted -Scope Process
+$ .\env\Scripts\activate
 ```
 
 2. Install dependencies (skip if you already did)
