@@ -82,15 +82,14 @@ class AniListResponseBuilder:
             embed.add_field(name="Episodes", value=episodes, inline=True)
             embed.add_field(name="Season", value=self._get_season(start_season=release_season, start_year=release_year,
                                                                   end_year=end_year, end_month=end_month), inline=True)
-            embed.add_field(name="Anime Status", value="```\n{status}```".format(status=status), inline=True)
 
         if media_type == AniListConstants.MANGA:
             chapters = media_info.get("chapters")
             embed.add_field(name="Chapters", value=chapters, inline=True)
             embed.add_field(name="Release Year", inline=True,
                             value="```ml\n{release_year}```".format(release_year=release_year))
-            embed.add_field(name="Manga Status", value="```\n{status}```".format(status=status), inline=True)
 
+        embed.add_field(name="Status", value="```\n{status}```".format(status=status), inline=True)
         embed.add_field(name="Stats", value=self._build_media_stats(stats), inline=False)
 
         return embed
