@@ -28,6 +28,7 @@ class AniList(Cog):
             prompt = context.message.content.split(' ', 1)[1]
             print(prompt)
             try:
+
                 anilist_response = self.ani_list_api.get_anime(media_name=prompt, media_type=AniListConstants.ANIME)
                 if anilist_response:
                     media_info = anilist_response.get("data").get("Media")
@@ -41,11 +42,7 @@ class AniList(Cog):
             except Exception as e:
                 print("Error Occurred when trying to get Anime from AniList API. An exception was raised:", e)
                 print(traceback.format_exc())
-        else:
-            await context.send(embed=generate_embed_message(title="Need Anime Name",
-                                                            message="What anime would you like me to find?"
-                                                                    " Please add anime name after !fanime command",
-                                                            color=discord.Color.purple()))
+
 
     @command(name="fmanga")
     async def get_manga(self, context: Context):

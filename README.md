@@ -59,8 +59,8 @@ $ .\env\Scripts\activate
 $ poetry install
 ```
 
-
 ## How to run the App
+
 1. Initialize your virtual environment that you set up
 
 ```

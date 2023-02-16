@@ -4,7 +4,6 @@ import requests
 
 from blish.modules.anilist.constants import AniListConstants
 
-
 class AniListApiQueries:
     """The AniListApiQueries class contains methods to invoke the AniList GQL Api and retrieve the respective information."""
 
@@ -16,12 +15,13 @@ class AniListApiQueries:
 
         Args:
             media_type (str): Type of media (ANIME or MANGA)
-            media_name (str): Anime Name to be searched
+            media_name (str): Anime or Manga Name to be searched
 
         Returns:
             dict: Python Dict with the anime searched anime info.
 
         """
+
         variables = {
             'search': media_name
         }
@@ -87,6 +87,7 @@ class AniListApiQueries:
                             amount
                         }
                     }
+
                     rankings {
                         rank
                         allTime
