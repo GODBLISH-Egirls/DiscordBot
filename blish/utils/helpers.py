@@ -30,4 +30,4 @@ def clean_html_tags(string: str):
     for tag in html_tags.keys():
         string = string.replace(tag, html_tags.get(tag))
 
-    return string
+    return re.sub(r'\n+', '\n\n', string)

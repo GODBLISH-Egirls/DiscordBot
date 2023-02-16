@@ -68,7 +68,7 @@ $ poetry install
 $ source .venv/bin/activate
 # initialize your virtual environment (Windows)
 $  Set-ExecutionPolicy Unrestricted -Scope Process
-$ .\env\Scripts\activate
+$ .\env\Scripts\activate or .\.venv\Scripts\activate 
 ```
 
 2. Install dependencies (skip if you already did)
@@ -83,8 +83,10 @@ $ poetry install
 **Note: You need to have the ENV file, which has the Discord Auth Token to start. Ask Hyun for File**
 
 ```
-# start up the bot
+# start up the bot (Linux/Unix)
 $ poetry run task start
+# start up the bot (Windows)
+$ poetry run task start_win
 ```
 
 ## Contributing
